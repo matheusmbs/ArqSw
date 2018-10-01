@@ -2,6 +2,7 @@ package br.usjt.arqsw18.pipoca.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -28,23 +29,6 @@ public class ManterFilmesController {
 		gService = new GeneroService();
 	}
 
-	// request.setCharacterEncoding("UTF-8");
-
-	/*
-	 * String titulo = request.getParameter("titulo"); String descricao =
-	 * request.getParameter("descricao"); String diretor =
-	 * request.getParameter("diretor"); String posterPath =
-	 * request.getParameter("posterPath"); String popularidade =
-	 * request.getParameter("popularidade") == null ||
-	 * request.getParameter("popularidade").length() == 0 ? "0" :
-	 * request.getParameter("popularidade"); String dataLancamento =
-	 * request.getParameter("dataLancamento") == null ||
-	 * request.getParameter("dataLancamento").length() == 0 ? "" :
-	 * request.getParameter("dataLancamento"); String idGenero =
-	 * request.getParameter("genero.id"); String chave =
-	 * request.getParameter("data[search]");
-	 */
-
 	@RequestMapping("index")
 	public String iniciar(Model model) {
 		String login = "2";
@@ -56,7 +40,7 @@ public class ManterFilmesController {
 	public String novo(Model model) {
 		try {
 			gService = new GeneroService();
-			ArrayList<Genero> generos = gService.listarGeneros();
+			List<Genero> generos = gService.listarGeneros();
 			model.addAttribute("generos", generos);
 			return "CriarFilme";
 		} catch (IOException e) {
@@ -100,7 +84,7 @@ public class ManterFilmesController {
 		try {
 			//HttpSession session = ((HttpServletRequest) model).getSession();
 
-			ArrayList<Filme> lista;
+			List<Filme> lista;
 			if (chave != null && chave.length() > 0) {
 				lista = fService.listarFilmes(chave);
 			} else {
@@ -138,7 +122,7 @@ public class ManterFilmesController {
 		try {
 			
 			fService.excluirFilme(id);
-			ArrayList<Filme> lista;
+			List<Filme> lista;
 			lista = fService.listarFilmes();
 			session.setAttribute("lista", lista);
 			return "ListarFilmes";
@@ -155,7 +139,7 @@ public class ManterFilmesController {
 		int id = Integer.parseInt(chave);
 		try {
 			gService = new GeneroService();
-			ArrayList<Genero> generos = gService.listarGeneros();
+			List<Genero> generos = gService.listarGeneros();
 			model.addAttribute("generos", generos);
 			Filme filme = fService.buscarFilme(id);
 			session.setAttribute("filme", filme);

@@ -2,6 +2,7 @@ package br.usjt.arqsw18.pipoca.model.service;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class GeneroService {
 		return dao.buscarGenero(id);
 	}
 	
-	public ArrayList<Genero> listarGeneros() throws IOException{
+	public List<Genero> listarGeneros() throws IOException{
 		return dao.listarGeneros();
 	}
 

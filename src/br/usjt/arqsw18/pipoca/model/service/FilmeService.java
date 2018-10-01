@@ -2,6 +2,7 @@ package br.usjt.arqsw18.pipoca.model.service;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,11 +26,11 @@ public class FilmeService {
 		return filme;
 	}
 
-	public ArrayList<Filme> listarFilmes(String chave) throws IOException{
+	public List<Filme> listarFilmes(String chave) throws IOException{
 		return dao.listarFilmes(chave);
 	}
 
-	public ArrayList<Filme> listarFilmes() throws IOException{
+	public List<Filme> listarFilmes() throws IOException{
 		return dao.listarFilmes();
 	}
 	
