@@ -11,10 +11,4 @@ public class HelloWorldController {
 		System.out.println("chamou o controller hello");
 		return "hello";
 	}
-	
-	@RequestMapping("/")
-	public String execut() {
-		System.out.println("chamou o controller hello");
-		return "hello";
-	}
 }
