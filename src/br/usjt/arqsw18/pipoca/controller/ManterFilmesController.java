@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,7 @@ import br.usjt.arqsw18.pipoca.model.service.GeneroService;
 public class ManterFilmesController {
 	private FilmeService fService;
 	private GeneroService gService;
-
+	
 	public ManterFilmesController() {
 		fService = new FilmeService();
 		gService = new GeneroService();
@@ -45,8 +46,10 @@ public class ManterFilmesController {
 	 */
 
 	@RequestMapping("index")
-	public String iniciar() {
-		return "index";
+	public String iniciar(Model model) {
+		String login = "2";
+		model.addAttribute("login", login);
+		return "login";
 	}
 	
 	@RequestMapping("/novo_filme")
@@ -178,5 +181,11 @@ public class ManterFilmesController {
 			model.addAttribute("erro", e);
 			return "Erro";
 		}
+	}
+	
+	@RequestMapping("/logout")
+	public String logout() {
+		
+		return "login";
 	}
 }

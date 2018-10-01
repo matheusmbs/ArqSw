@@ -7,9 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
 import br.usjt.arqsw18.pipoca.model.entity.Filme;
 import br.usjt.arqsw18.pipoca.model.entity.Genero;
-
+@Repository
 public class FilmeDAO {
 	
 	public int inserirFilme(Filme filme) throws IOException {

@@ -7,8 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import br.usjt.arqsw18.pipoca.model.entity.Genero;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
+import br.usjt.arqsw18.pipoca.model.entity.Genero;
+@Repository
 public class GeneroDAO {
 
 	public Genero buscarGenero(int id) throws IOException {
