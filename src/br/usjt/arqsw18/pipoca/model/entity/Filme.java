@@ -2,17 +2,21 @@ package br.usjt.arqsw18.pipoca.model.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+@Entity
+//@Table(name="Filme") Este parametro só eh necessario quando o nome da table no banco difere do nome da classe
 public class Filme {
 	@Id
 	@NotNull
@@ -30,6 +34,7 @@ public class Filme {
 	@Min(value=1)
 	private double popularidade;
 	
+	@Temporal(value=TemporalType.DATE)
 	private Date dataLancamento;
 	
 	@Size(max=200, message="Tamanho máximo de 200 caracteres")

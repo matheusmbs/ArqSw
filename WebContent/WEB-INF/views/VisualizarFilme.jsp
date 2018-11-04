@@ -79,7 +79,7 @@
 		<hr />
 		<div id="actions" class="row">
 			<div class="col-md-12">
-				<a href="alterar_filme?acao=editar&id=${filme.id}" class="btn btn-primary">Editar</a> 
+				<a href="alterar_filme?id=${filme.id}" class="btn btn-primary">Editar</a> 
 				<a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a> 
 				<a href="listar_filmes" class="btn btn-default">Voltar</a>
 			</div>

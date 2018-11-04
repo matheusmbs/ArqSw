@@ -14,7 +14,15 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="reiniciar_lista">Filmes</a></li>
-                    <li><a href="logout">Sair</a></li>
+                    <li><a href="carregar_filmes">Carregar do TMDB</a></li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catálogo</a>
+                    		<ul class="dropdown-menu">
+  						  <li><a class="dropdown-item" href="#">por Gênero</a></li>
+  						   <li><a class="dropdown-item" href="#">por Popularidade</a></li>
+  						   <li><a class="dropdown-item" href="#">Lançamentos</a></li>
+						</ul>
+                    </li>
                 </ul>
             </div>
         </div>
